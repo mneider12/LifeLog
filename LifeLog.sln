@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeLog", "LifeLog\LifeLog.csproj", "{3A84C0F2-F37E-4037-B761-0A389AE25095}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeLog", "LifeLog\LifeLog.csproj", "{44B81F2E-07C0-41A9-8713-977D69945966}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeLog.Console", "LifeLog.Console\LifeLog.Console.csproj", "{F5E429A5-CFF3-433F-9372-27560E57E234}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3A84C0F2-F37E-4037-B761-0A389AE25095}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3A84C0F2-F37E-4037-B761-0A389AE25095}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3A84C0F2-F37E-4037-B761-0A389AE25095}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3A84C0F2-F37E-4037-B761-0A389AE25095}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44B81F2E-07C0-41A9-8713-977D69945966}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44B81F2E-07C0-41A9-8713-977D69945966}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44B81F2E-07C0-41A9-8713-977D69945966}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44B81F2E-07C0-41A9-8713-977D69945966}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5E429A5-CFF3-433F-9372-27560E57E234}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5E429A5-CFF3-433F-9372-27560E57E234}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5E429A5-CFF3-433F-9372-27560E57E234}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5E429A5-CFF3-433F-9372-27560E57E234}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
