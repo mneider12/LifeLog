@@ -11,10 +11,15 @@ namespace LifeLog.Console
         static void Main(string[] args)
         {
             SetupConsole();
-            
-            MenuOption selection = GetSelection();
 
-            System.Console.ReadLine();
+            AdminMenu();
+
+        }
+
+        private static void AdminMenu()
+        {
+            MenuOption selection = GetSelection();
+            HandleSelection(selection);
         }
 
         private static void SetupConsole()
@@ -40,6 +45,23 @@ namespace LifeLog.Console
             } while (!(Enum.TryParse(input, out selection) && Enum.IsDefined(typeof(MenuOption), selection)));
 
             return selection;
+        }
+
+        private static void HandleSelection(MenuOption selection)
+        {
+            switch (selection)
+            {
+                case MenuOption.InstallLifeLog:
+                    InstallLifeLog();
+                    break;
+            }
+        }
+
+        private static void InstallLifeLog()
+        {
+
+
+            System.Console.ReadLine();
         }
         
         private enum MenuOption
