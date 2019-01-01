@@ -10,6 +10,10 @@ namespace LifeLog.Console
     {
         static void Main(string[] args)
         {
+            System.Console.Title = APP_TITLE;
+            System.Console.ReadLine();
         }
+
+        private const string APP_TITLE = "LifeLog Admin";
     }
 }

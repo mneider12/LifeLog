@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeLog", "LifeLog\LifeLog.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeLog.Console", "LifeLog.Console\LifeLog.Console.csproj", "{F5E429A5-CFF3-433F-9372-27560E57E234}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeLog.SQLite", "LifeLog.SQLite\LifeLog.SQLite.csproj", "{F67D3610-8ED7-4C8C-8697-3829A5D3C43B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F5E429A5-CFF3-433F-9372-27560E57E234}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5E429A5-CFF3-433F-9372-27560E57E234}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5E429A5-CFF3-433F-9372-27560E57E234}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F67D3610-8ED7-4C8C-8697-3829A5D3C43B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F67D3610-8ED7-4C8C-8697-3829A5D3C43B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F67D3610-8ED7-4C8C-8697-3829A5D3C43B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F67D3610-8ED7-4C8C-8697-3829A5D3C43B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
