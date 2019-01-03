@@ -61,7 +61,10 @@ namespace LifeLog.Console
         private static void InstallLifeLog()
         {
             Database.Create();
+            System.Console.WriteLine("Database created successfully");
+            System.Console.WriteLine("Press enter to continue");
             System.Console.ReadLine();
+            AdminMenu();
         }
         
         private enum MenuOption
