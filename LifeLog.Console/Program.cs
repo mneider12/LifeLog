@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LifeLog.SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -59,8 +60,7 @@ namespace LifeLog.Console
 
         private static void InstallLifeLog()
         {
-
-
+            Database.Create();
             System.Console.ReadLine();
         }
         
