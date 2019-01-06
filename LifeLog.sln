@@ -11,18 +11,25 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeLog.SQLite", "LifeLog.S
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Admin|Any CPU = Admin|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{44B81F2E-07C0-41A9-8713-977D69945966}.Admin|Any CPU.ActiveCfg = Admin|Any CPU
+		{44B81F2E-07C0-41A9-8713-977D69945966}.Admin|Any CPU.Build.0 = Admin|Any CPU
 		{44B81F2E-07C0-41A9-8713-977D69945966}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{44B81F2E-07C0-41A9-8713-977D69945966}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44B81F2E-07C0-41A9-8713-977D69945966}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44B81F2E-07C0-41A9-8713-977D69945966}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5E429A5-CFF3-433F-9372-27560E57E234}.Admin|Any CPU.ActiveCfg = Admin|Any CPU
+		{F5E429A5-CFF3-433F-9372-27560E57E234}.Admin|Any CPU.Build.0 = Admin|Any CPU
 		{F5E429A5-CFF3-433F-9372-27560E57E234}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F5E429A5-CFF3-433F-9372-27560E57E234}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5E429A5-CFF3-433F-9372-27560E57E234}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5E429A5-CFF3-433F-9372-27560E57E234}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F67D3610-8ED7-4C8C-8697-3829A5D3C43B}.Admin|Any CPU.ActiveCfg = Admin|Any CPU
+		{F67D3610-8ED7-4C8C-8697-3829A5D3C43B}.Admin|Any CPU.Build.0 = Admin|Any CPU
 		{F67D3610-8ED7-4C8C-8697-3829A5D3C43B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F67D3610-8ED7-4C8C-8697-3829A5D3C43B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F67D3610-8ED7-4C8C-8697-3829A5D3C43B}.Release|Any CPU.ActiveCfg = Release|Any CPU

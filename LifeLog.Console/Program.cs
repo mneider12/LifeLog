@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static LifeLog.Console.MenuUtil;
 
 namespace LifeLog.Console
 {
@@ -11,68 +12,34 @@ namespace LifeLog.Console
     {
         static void Main(string[] args)
         {
-            SetupConsole();
-
-            AdminMenu();
-
-        }
-
-        private static void AdminMenu()
-        {
-            MenuOption selection = GetSelection();
-            HandleSelection(selection);
-        }
-
-        private static void SetupConsole()
-        {
-            System.Console.Title = APP_TITLE;
-        }
-
-        private static void DisplayMenu()
-        {
-            System.Console.WriteLine("{0}) Install LifeLog", (int) MenuOption.InstallLifeLog);
-            System.Console.WriteLine("{0}) Quit", (int) MenuOption.Quit);
-        }
-
-        private static MenuOption GetSelection()
-        {
-            string input;
-            MenuOption selection;
-            do
+            if (args.Length >= 1 && args[0] == "-a")
             {
-                DisplayMenu();
-                input = System.Console.ReadLine();
-
-            } while (!(Enum.TryParse(input, out selection) && Enum.IsDefined(typeof(MenuOption), selection)));
-
-            return selection;
-        }
-
-        private static void HandleSelection(MenuOption selection)
-        {
-            switch (selection)
+                RunAdmin();
+            }
+            else
             {
-                case MenuOption.InstallLifeLog:
-                    InstallLifeLog();
-                    break;
+                RunUser();
             }
         }
 
-        private static void InstallLifeLog()
+        private static void RunUser()
         {
-            Database.Create();
-            System.Console.WriteLine("Database created successfully");
-            System.Console.WriteLine("Press enter to continue");
-            System.Console.ReadLine();
-            AdminMenu();
-        }
-        
-        private enum MenuOption
-        {
-            InstallLifeLog = 1,
-            Quit,
+            SetupConsole(USER_APP_TITLE);
+            UserMenu.Run();
         }
 
-        private const string APP_TITLE = "LifeLog Admin";
+        private static void RunAdmin()
+        {
+            SetupConsole(ADMIN_APP_TITLE);
+            AdminMenu.Run();
+        }
+
+        private static void SetupConsole(string appTitle)
+        {
+            System.Console.Title = appTitle;
+        }
+
+        private const string USER_APP_TITLE = "LifeLog";
+        private const string ADMIN_APP_TITLE = "LifeLog Admin";
     }
 }
