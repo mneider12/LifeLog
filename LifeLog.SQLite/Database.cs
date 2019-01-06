@@ -18,6 +18,36 @@ namespace LifeLog.SQLite
             CreateTables();
         }
 
+        public static void ExecuteNonQuery(string sql)
+        {
+            using (SQLiteConnection connection = Connection())
+            {
+                using (SQLiteCommand command = new SQLiteCommand(sql, connection))
+                {
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public static List<Dictionary<string, object>> Query(string sql, DataLoader dataLoader)
+        {
+            using (SQLiteConnection connection = Connection())
+            {
+                using (SQLiteCommand command = new SQLiteCommand(sql, connection))
+                {
+                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    {
+                        List<Dictionary<string, object>> results;
+                        dataLoader(reader, out results);
+
+                        return results;
+                    }
+                }
+            }
+        }
+
+        public delegate void DataLoader(SQLiteDataReader reader, out List<Dictionary<string, object>> results);
+
         private static void CreateDatabaseFile()
         {
             SQLiteConnection.CreateFile(DATABASE_FILE);

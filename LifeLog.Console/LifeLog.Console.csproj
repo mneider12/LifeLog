@@ -74,6 +74,10 @@
       <Project>{F67D3610-8ED7-4C8C-8697-3829A5D3C43B}</Project>
       <Name>LifeLog.SQLite</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LifeLog\LifeLog.csproj">
+      <Project>{44B81F2E-07C0-41A9-8713-977D69945966}</Project>
+      <Name>LifeLog</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.109.2\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.109.2\build\net451\System.Data.SQLite.Core.targets')" />
