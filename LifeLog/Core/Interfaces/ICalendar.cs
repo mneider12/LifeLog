@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LifeLog.Core
 {
@@ -11,6 +7,9 @@ namespace LifeLog.Core
     /// </summary>
     public interface ICalendar
     {
+        /// <summary>
+        /// today's date
+        /// </summary>
         DateTime Today { get; }
     }
 }
