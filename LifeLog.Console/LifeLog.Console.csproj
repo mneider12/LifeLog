@@ -59,7 +59,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminMenu.cs" />
+    <Compile Include="AdminMenuOld.cs" />
+    <Compile Include="Implementations\AdminMenu.cs" />
+    <Compile Include="Implementations\UserMenu.cs" />
+    <Compile Include="Interfaces\IMenu.cs" />
     <Compile Include="Interfaces\IProgram.cs" />
     <Compile Include="MenuUtil.cs" />
     <Compile Include="Implementations\Program.cs" />

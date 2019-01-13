@@ -1,14 +1,16 @@
 ﻿using LifeLog.SQLite;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using static LifeLog.Console.MenuUtil;
 
 namespace LifeLog.Console
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    public class AdminMenu
+    public class AdminMenu: IMenu
     {
-        public static void Run()
+        public void Run()
         {
             string[] prompts = new string[]
             {
@@ -58,8 +60,8 @@ namespace LifeLog.Console
                 System.Console.WriteLine("Press enter to continue");
                 System.Console.ReadLine();
             }
- 
-            Run();
+
+            new AdminMenu().Run();
         }
     }
 }

@@ -43,14 +43,7 @@ namespace LifeLog.Console
         public void Run()
         {
             SetupConsole();
-            if (mode == RunMode.Admin)
-            {
-                AdminMenu.Run();
-            }
-            else
-            {
-                UserMenu.Run();
-            }
+            RunMenu();
         }
 
         /// <summary>
@@ -95,6 +88,21 @@ namespace LifeLog.Console
         private static void SetTitle(string appTitle)
         {
             System.Console.Title = appTitle;
+        }
+
+        private void RunMenu()
+        {
+            IMenu menu;
+            switch (mode)
+            {
+                case RunMode.Admin:
+                    menu = new AdminMenu();
+                    menu.Run();
+                    break;
+                default:
+                    UserMenu.Run();
+                    break;
+            }
         }
 
         private enum RunMode
