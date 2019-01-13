@@ -9,7 +9,7 @@ namespace LifeLog.Model
 {
     public class Day : IDay
     {
-        public Day(DateTime date, int score) { }
+        public Day() { }
 
         public static bool IsDateValid(DateTime date)
         {

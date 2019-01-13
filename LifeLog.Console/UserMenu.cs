@@ -1,4 +1,5 @@
-﻿using LifeLog.Model;
+﻿using LifeLog.Core;
+using LifeLog.Model;
 using LifeLog.SQLite;
 using System;
 using System.Collections.Generic;
@@ -35,13 +36,19 @@ namespace LifeLog.Console
         {
             object dateObject;
             object scoreObject;
+            Calendar calendar = new Calendar();
+            DayValidator dayValidator = new DayValidator(calendar);
             
             if (GetUserInput(out dateObject, "Date", DateValidator) && GetUserInput(out scoreObject, "Score", ScoreValidator))
             {
                 DateTime date = (DateTime)dateObject;
                 int score = (int)scoreObject;
 
-                Day day = new Day(date, score);
+                Day day = new Day()
+                {
+                    Date = date,
+                    Score = score,
+                };
 
                 day.Save();
             }

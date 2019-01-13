@@ -11,6 +11,6 @@ namespace LifeLog.Core
     /// </summary>
     public interface ICalendar
     {
-        DateTime Today();
+        DateTime Today { get; }
     }
 }
