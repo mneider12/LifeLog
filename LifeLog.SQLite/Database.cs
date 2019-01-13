@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,17 @@ namespace LifeLog.SQLite
         {
             CreateDatabaseFile();
             CreateTables();
+        }
+
+        public static void Delete()
+        {
+            File.Delete(DATABASE_FILE);
+            Directory.GetCurrentDirectory();
+        }
+
+        public static bool Exists()
+        {
+            return File.Exists(DATABASE_FILE);
         }
 
         public static void ExecuteNonQuery(string sql)
@@ -52,6 +64,7 @@ namespace LifeLog.SQLite
         {
             SQLiteConnection.CreateFile(DATABASE_FILE);
         }
+
 
         private static void CreateTables()
         {

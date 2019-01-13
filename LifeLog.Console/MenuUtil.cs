@@ -14,6 +14,19 @@ namespace LifeLog.Console
             actions[selection]();
         }
 
+        public static bool YesNoPrompt(string prompt)
+        {
+            System.Console.WriteLine(prompt);
+            if (GetSelection(new string[] { "Yes", "No" }) == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         private static int GetSelection(string[] prompts)
         {
             string input;
