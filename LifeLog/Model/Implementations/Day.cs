@@ -7,27 +7,18 @@ using System.Threading.Tasks;
 
 namespace LifeLog.Model
 {
+    /// <summary>
+    /// Log for one day
+    /// </summary>
     public class Day : IDay
     {
-        public Day() { }
-
-        public static bool IsDateValid(DateTime date)
-        {
-            return date.CompareTo(DateTime.Today) <= 0;
-        }
-
-        public static bool IsScoreValid(int score)
-        {
-            return score >= 1 && score <= 10;
-        }
-
-        public void Save()
-        {
-            string sql = string.Format("INSERT INTO days (date, score) values ('{0}', '{1}')", Date.Ticks, Score);
-            Database.ExecuteNonQuery(sql);
-        }
-
+        /// <summary>
+        /// Date of log
+        /// </summary>
         public DateTime Date { get; set; }
+        /// <summary>
+        /// day's overall score
+        /// </summary>
         public int Score { get; set; }
     }
 }

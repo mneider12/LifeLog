@@ -51,11 +51,8 @@
   <ItemGroup>
     <Compile Include="Core\Implementations\Calendar.cs" />
     <Compile Include="Core\Interfaces\ICalendar.cs" />
-    <Compile Include="Model\Exceptions\DayValidationException.cs" />
     <Compile Include="Model\Implementations\Day.cs" />
-    <Compile Include="Model\Validators\Implementations\DayValidator.cs" />
     <Compile Include="Model\Interfaces\IDay.cs" />
-    <Compile Include="Model\Validators\Interfaces\IDayValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

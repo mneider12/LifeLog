@@ -11,7 +11,13 @@ namespace LifeLog.Model
     /// </summary>
     public interface IDay
     {
+        /// <summary>
+        /// Date of log
+        /// </summary>
         DateTime Date { get; set; }
+        /// <summary>
+        /// Day's overall score
+        /// </summary>
         int Score { get; set; }
     }
 }

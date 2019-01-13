@@ -7,6 +7,9 @@ namespace LifeLog.Core
     /// </summary>
     public class Calendar : ICalendar
     {
-        public DateTime Today { get; }
+        public DateTime Today
+        {
+            get { return DateTime.Today; }
+        }
     }
 }

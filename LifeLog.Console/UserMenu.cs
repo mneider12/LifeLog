@@ -37,7 +37,6 @@ namespace LifeLog.Console
             object dateObject;
             object scoreObject;
             Calendar calendar = new Calendar();
-            DayValidator dayValidator = new DayValidator(calendar);
             
             if (GetUserInput(out dateObject, "Date", DateValidator) && GetUserInput(out scoreObject, "Score", ScoreValidator))
             {
@@ -50,7 +49,7 @@ namespace LifeLog.Console
                     Score = score,
                 };
 
-                day.Save();
+                Save(day);
             }
 
             Run();
@@ -85,7 +84,7 @@ namespace LifeLog.Console
         private static bool DateValidator(string input, out object value)
         {
             DateTime date;
-            bool success = DateTime.TryParse(input, out date) && Day.IsDateValid(date);
+            bool success = DateTime.TryParse(input, out date) && IsDateValid(date);
             value = date;
             return success;
         }
@@ -93,9 +92,25 @@ namespace LifeLog.Console
         private static bool ScoreValidator(string input, out object value)
         {
             int score;
-            bool success = int.TryParse(input, out score) && Day.IsScoreValid(score);
+            bool success = int.TryParse(input, out score) && IsScoreValid(score);
             value = score;
             return success;
+        }
+
+        public static bool IsDateValid(DateTime date)
+        {
+            return date.CompareTo(DateTime.Today) <= 0;
+        }
+
+        public static bool IsScoreValid(int score)
+        {
+            return score >= 1 && score <= 10;
+        }
+
+        public static void Save(Day day)
+        {
+            string sql = string.Format("INSERT INTO days (date, score) values ('{0}', '{1}')", day.Date.Ticks, day.Score);
+            Database.ExecuteNonQuery(sql);
         }
 
         private static void DayDataLoader(SQLiteDataReader reader, out List<Dictionary<string, object>> results)
