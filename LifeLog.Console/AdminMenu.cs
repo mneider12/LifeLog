@@ -1,13 +1,11 @@
 ﻿using LifeLog.SQLite;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static LifeLog.Console.MenuUtil;
 
 namespace LifeLog.Console
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class AdminMenu
     {
         public static void Run()
