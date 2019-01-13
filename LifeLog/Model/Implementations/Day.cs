@@ -7,25 +7,9 @@ using System.Threading.Tasks;
 
 namespace LifeLog.Model
 {
-    public class Day
+    public class Day : IDay
     {
-        private Day() { }
-
-        public static Day Create(DateTime date, int score)
-        {
-            if (IsDateValid(date) && IsScoreValid(score))
-            {
-                return new Day()
-                {
-                    Date = date,
-                    Score = score,
-                };
-            }
-            else
-            {
-                return null;
-            }
-        }
+        public Day(DateTime date, int score) { }
 
         public static bool IsDateValid(DateTime date)
         {

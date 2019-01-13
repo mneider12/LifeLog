@@ -49,7 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Day.cs" />
+    <Compile Include="Core\Implementations\Calendar.cs" />
+    <Compile Include="Core\Interfaces\ICalendar.cs" />
+    <Compile Include="Model\Implementations\Day.cs" />
+    <Compile Include="Model\Interfaces\IDay.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -58,6 +61,7 @@
       <Name>LifeLog.SQLite</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

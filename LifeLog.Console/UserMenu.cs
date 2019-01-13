@@ -41,7 +41,8 @@ namespace LifeLog.Console
                 DateTime date = (DateTime)dateObject;
                 int score = (int)scoreObject;
 
-                Day day = Day.Create(date, score);
+                Day day = new Day(date, score);
+
                 day.Save();
             }
 
