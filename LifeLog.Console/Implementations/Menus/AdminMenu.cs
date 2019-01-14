@@ -1,30 +1,23 @@
 ﻿using LifeLog.SQLite;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static LifeLog.Console.MenuUtil;
 
 namespace LifeLog.Console
 {
-    public class AdminMenu: IMenu
+    public class AdminMenu: MenuBase
     {
-        public void Run()
+        public AdminMenu()
         {
-            string[] prompts = new string[]
+            prompts = new string[]
             {
                 GetInstallDatabasePrompt(),
                 "Quit",
             };
 
-            SelectionAction[] actions = new SelectionAction[]
+            actions = new SelectionAction[]
             {
                 InstallLifeLog,
                 () => { },
             };
-
-            RunMenu(prompts, actions);
         }
 
         private static string GetInstallDatabasePrompt()
@@ -39,7 +32,7 @@ namespace LifeLog.Console
             }
         }
 
-        private static void InstallLifeLog()
+        private void InstallLifeLog()
         {
             bool create = true;
             if (Database.Exists())
@@ -61,7 +54,7 @@ namespace LifeLog.Console
                 System.Console.ReadLine();
             }
 
-            new AdminMenu().Run();
+            Run();
         }
     }
 }
