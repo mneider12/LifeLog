@@ -34,7 +34,6 @@ namespace LifeLog.Console
         private Program(string[] args)
         {
             mode = GetRunMode(args);
-            Run();
         }
 
         /// <summary>
