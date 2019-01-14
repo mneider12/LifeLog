@@ -16,4 +16,10 @@ namespace LifeLog.Console
         /// </summary>
         void Run();
     }
+
+    public enum RunMode
+    {
+        User,
+        Admin,
+    }
 }

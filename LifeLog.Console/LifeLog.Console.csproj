@@ -62,12 +62,13 @@
     <Compile Include="AdminMenuOld.cs" />
     <Compile Include="Implementations\AdminMenu.cs" />
     <Compile Include="Implementations\Console.cs" />
+    <Compile Include="Implementations\Program.cs" />
     <Compile Include="Implementations\UserMenu.cs" />
     <Compile Include="Interfaces\IMenu.cs" />
     <Compile Include="Interfaces\IConsole.cs" />
     <Compile Include="Interfaces\IProgram.cs" />
     <Compile Include="MenuUtil.cs" />
-    <Compile Include="Implementations\Program.cs" />
+    <Compile Include="Driver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserMenuOld.cs" />
   </ItemGroup>

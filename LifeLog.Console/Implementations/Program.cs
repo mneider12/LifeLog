@@ -1,37 +1,13 @@
-﻿using LifeLog.SQLite;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static LifeLog.Console.MenuUtil;
 
 namespace LifeLog.Console
 {
-    /// <summary>
-    /// Text user interface
-    /// </summary>
     public class Program: IProgram
     {
-        /// <summary>
-        /// program entry point
-        /// </summary>
-        /// <param name="args">
-        ///     if args[0] = "-a" then run in admin mode
-        /// </param>
-        public static void Main(string[] args)
-        {
-            Dictionary<RunMode, IMenu> startMenus = new Dictionary<RunMode, IMenu>()
-            {
-                { RunMode.User, new UserMenu() },
-                { RunMode.Admin, new AdminMenu() },
-            };
-
-            Console console = new Console();
-            Program program = new Program(args, console, startMenus);
-            program.Run();
-        }
-
         /// <summary>
         /// program runner
         /// </summary>
@@ -41,7 +17,7 @@ namespace LifeLog.Console
         /// <param name="console">
         ///     program host console
         /// </param>
-        private Program(string[] args, IConsole console, Dictionary<RunMode, IMenu> startMenus)
+        public Program(string[] args, IConsole console, Dictionary<RunMode, IMenu> startMenus)
         {
             mode = GetRunMode(args);
             this.console = console;
@@ -120,12 +96,6 @@ namespace LifeLog.Console
                     UserMenuOld.Run();
                     break;
             }
-        }
-
-        private enum RunMode
-        {
-            User,
-            Admin,
         }
 
         private RunMode mode;
