@@ -21,7 +21,14 @@ namespace LifeLog.Console
         /// </param>
         public static void Main(string[] args)
         {
-            Program program = new Program(args);
+            Dictionary<RunMode, IMenu> startMenus = new Dictionary<RunMode, IMenu>()
+            {
+                { RunMode.User, new UserMenu() },
+                { RunMode.Admin, new AdminMenu() },
+            };
+
+            Console console = new Console();
+            Program program = new Program(args, console, startMenus);
             program.Run();
         }
 
@@ -31,9 +38,13 @@ namespace LifeLog.Console
         /// <param name="args">
         ///     if args[0] = "-a" then run in admin mode
         /// </param>
-        private Program(string[] args)
+        /// <param name="console">
+        ///     program host console
+        /// </param>
+        private Program(string[] args, IConsole console, Dictionary<RunMode, IMenu> startMenus)
         {
             mode = GetRunMode(args);
+            this.console = console;
         }
 
         /// <summary>
@@ -68,6 +79,9 @@ namespace LifeLog.Console
             return mode;
         }
 
+        /// <summary>
+        /// Set the console title based on mode
+        /// </summary>
         private void SetupConsole()
         {
             string appTitle;
@@ -84,9 +98,13 @@ namespace LifeLog.Console
             SetTitle(appTitle);
         }
 
-        private static void SetTitle(string appTitle)
+        /// <summary>
+        /// set the console title
+        /// </summary>
+        /// <param name="appTitle">title</param>
+        private void SetTitle(string appTitle)
         {
-            System.Console.Title = appTitle;
+            console.Title = appTitle;
         }
 
         private void RunMenu()
@@ -99,7 +117,7 @@ namespace LifeLog.Console
                     menu.Run();
                     break;
                 default:
-                    UserMenu.Run();
+                    UserMenuOld.Run();
                     break;
             }
         }
@@ -111,6 +129,7 @@ namespace LifeLog.Console
         }
 
         private RunMode mode;
+        private IConsole console;
 
         private const string USER_APP_TITLE = "LifeLog";
         private const string ADMIN_APP_TITLE = "LifeLog Admin";

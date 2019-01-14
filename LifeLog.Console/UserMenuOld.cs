@@ -11,7 +11,7 @@ using static LifeLog.Console.MenuUtil;
 
 namespace LifeLog.Console
 {
-    public class UserMenu
+    public class UserMenuOld
     {
         public static void Run()
         {

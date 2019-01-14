@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace LifeLog.Console
 {
-    public class UserMenu: IMenu
+    /// <summary>
+    /// interact with the console program host
+    /// </summary>
+    public interface IConsole
     {
-        public void Run() { }
+        string Title { get; set; }
     }
 }
