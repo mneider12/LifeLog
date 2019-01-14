@@ -21,6 +21,7 @@ namespace LifeLog.Console
         {
             mode = GetRunMode(args);
             this.console = console;
+            this.startMenus = startMenus;
         }
 
         /// <summary>
@@ -89,8 +90,7 @@ namespace LifeLog.Console
             switch (mode)
             {
                 case RunMode.Admin:
-                    menu = new AdminMenu();
-                    menu.Run();
+                    startMenus[mode].Run();
                     break;
                 default:
                     UserMenuOld.Run();
@@ -100,6 +100,7 @@ namespace LifeLog.Console
 
         private RunMode mode;
         private IConsole console;
+        private Dictionary<RunMode, IMenu> startMenus;
 
         private const string USER_APP_TITLE = "LifeLog";
         private const string ADMIN_APP_TITLE = "LifeLog Admin";
