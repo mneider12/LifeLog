@@ -1,23 +1,30 @@
 ﻿using LifeLog.SQLite;
-using static LifeLog.Console.MenuUtil;
+using static LifeLog.Console.BaseMenu;
 
 namespace LifeLog.Console
 {
-    public class AdminMenu: MenuBase
+    public class AdminMenu: IMenu
     {
         public AdminMenu()
         {
-            prompts = new string[]
+            string[] prompts = new string[]
             {
                 GetInstallDatabasePrompt(),
                 "Quit",
             };
 
-            actions = new SelectionAction[]
+            SelectionAction[] actions = new SelectionAction[]
             {
                 InstallLifeLog,
                 () => { },
             };
+
+            menu = new BaseMenu(prompts, actions);
+        }
+
+        public void Run()
+        {
+            menu.Run();
         }
 
         private static string GetInstallDatabasePrompt()
@@ -37,7 +44,7 @@ namespace LifeLog.Console
             bool create = true;
             if (Database.Exists())
             {
-                if (YesNoPrompt("Database already exists, are you sure you would like to re-create it?"))
+                if (MenuUtil.YesNoPrompt("Database already exists, are you sure you would like to re-create it?"))
                 {
                     Database.Delete();
                 }
@@ -54,7 +61,9 @@ namespace LifeLog.Console
                 System.Console.ReadLine();
             }
 
-            Run();
+            menu.Run();
         }
+
+        private BaseMenu menu;
     }
 }

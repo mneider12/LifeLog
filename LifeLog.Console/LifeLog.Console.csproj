@@ -61,7 +61,7 @@
   <ItemGroup>
     <Compile Include="Implementations\Menus\AdminMenu.cs" />
     <Compile Include="Implementations\Console.cs" />
-    <Compile Include="Implementations\Menus\MenuBase.cs" />
+    <Compile Include="Implementations\Menus\BaseMenu.cs" />
     <Compile Include="Implementations\Program.cs" />
     <Compile Include="Implementations\Menus\UserMenu.cs" />
     <Compile Include="Interfaces\IMenu.cs" />

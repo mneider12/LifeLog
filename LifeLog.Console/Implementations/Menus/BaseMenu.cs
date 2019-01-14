@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LifeLog.Console
+﻿namespace LifeLog.Console
 {
-    public class MenuBase : IMenu
+    public class BaseMenu : IMenu
     {
+        public BaseMenu(string[] prompts, SelectionAction[] actions)
+        {
+            this.prompts = prompts;
+            this.actions = actions;
+        }
+
         public void Run()
         {
             int selection = GetSelection(prompts);
@@ -36,8 +36,8 @@ namespace LifeLog.Console
             }
         }
 
-        protected string[] prompts;
-        protected SelectionAction[] actions;
+        private string[] prompts;
+        private SelectionAction[] actions;
 
         public delegate void SelectionAction();
     }
