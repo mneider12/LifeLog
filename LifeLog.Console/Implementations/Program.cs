@@ -86,16 +86,7 @@ namespace LifeLog.Console
 
         private void RunMenu()
         {
-            IMenu menu;
-            switch (mode)
-            {
-                case RunMode.Admin:
-                    startMenus[mode].Run();
-                    break;
-                default:
-                    UserMenuOld.Run();
-                    break;
-            }
+            startMenus[mode].Run();
         }
 
         private RunMode mode;
